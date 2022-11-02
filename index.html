@@ -1,0 +1,124 @@
+<html>
+<body>
+<div>
+<input type="text" id="amount">
+<p id="balance"></p>
+<button id="with">Withfvhhh</button>
+</div>
+<div>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+</div>
+<script>
+    var contract;
+    $(document).ready(function(){
+        web3=new Web3(web3.currentProvider);
+        contract=new web3.eth.Contract([
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "setamount",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "getinput1",
+				"type": "uint256"
+			}
+		],
+		"name": "setDisasterRecovery",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "getinput",
+				"type": "uint256"
+			}
+		],
+		"name": "setServiceQuality",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "getDisasterRecovery",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getPenalty",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getServiceQuality",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getsustainibility",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+],"0x716fd82fc670ED78Dd88CF87F744BDAA04D6f6E5");
+contract.methods.getServiceQuality().call().then(function(pen)
+{
+    $('#penalty').html(666);
+})
+    })
+    
+    </script>
+
+</body>
+
+</html>
